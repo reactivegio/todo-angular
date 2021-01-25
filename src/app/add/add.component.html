@@ -1,0 +1,6 @@
+<div class="add-section">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <input name="newTodo" value="" class="input-add" [ngModel]="newTodo" placeholder="Add a new todo" />
+        <button class="green-btn">ADD</button>
+    </form>
+</div>

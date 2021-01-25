@@ -1,0 +1,33 @@
+<div class="content">
+  <div *ngIf="todosList.length > 0; else elseBlock">
+    <div *ngFor="let el of todosList; let index = index">
+      
+      <div
+            style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #FFF;
+            "
+        >
+            <input
+                class="task-status"
+                type="checkbox"
+                (change)="toggleTodoComplete(el.id, el.isCompleted)"     
+                [checked]="el.isCompleted"                           
+            />
+            <label class="task-name" [className]="el.isCompleted ? 'task-name complete' : 'task-name'">
+                {{ el.title }}
+            </label>
+            <button
+                class="task-delete"
+                (click)="deleteTodo(el.id)"                
+            ></button>
+        </div>
+        
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <div class="textCentered"><div>NO TASK FOUND</div></div>
+  </ng-template>
+</div>
