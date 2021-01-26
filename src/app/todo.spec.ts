@@ -7,8 +7,9 @@ describe('Todo', () => {
 
   it('should accept values in the constructor', () => {
     let todo = new Todo({
+      id: 1,
       title: 'My first todo test',
-      complete: true
+      isCompleted: true
     });
     expect(todo.title).toEqual('My first todo test');
     expect(todo.isCompleted).toEqual(true);
